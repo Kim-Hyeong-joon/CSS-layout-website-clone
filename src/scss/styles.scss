@@ -1,6 +1,11 @@
-@import "_variables";
-@import "_mixins";
+@import "_buttons";
 
-h1 {
-  @include sexyTitle();
+a {
+  @extend %button;
+  text-decoration: none;
+}
+
+button {
+  @extend %button;
+  border: none;
 }
