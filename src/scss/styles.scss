@@ -15,6 +15,14 @@ main {
   grid-template-rows: 60px repeat(5, 1fr) 60px;
   & > * {
     font-size: 20px;
+    cursor: pointer;
+  }
+  & > *:not(.img) {
+    transition: all 0.5s;
+    &:hover {
+      background-color: $mainColor;
+      color: white;
+    }
   }
   img {
     grid-column: 2 / -2;
