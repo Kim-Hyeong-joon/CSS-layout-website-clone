@@ -5,58 +5,94 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
-  color: $mainColor;
+}
+
+body {
+  padding-top: 50px;
+}
+
+header {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  & > * {
+    font-size: 30px;
+  }
+  & > div {
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: #dfe1e2;
+      .left-column__title {
+        &:hover {
+          color: white;
+          & + div {
+            opacity: 1;
+          }
+        }
+      }
+      .left-column__menu {
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  .left-column {
+    .left-column__title {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-right: 90px;
+    }
+    .left-column__menu {
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      display: flex;
+      align-items: center;
+      &:hover {
+        opacity: 1;
+      }
+      span {
+        margin-right: 90px;
+      }
+    }
+  }
+  .right-column {
+    justify-content: space-between;
+    span:nth-child(2) {
+      padding-right: 120px;
+    }
+  }
 }
 
 main {
-  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr max-content 1fr;
-  grid-template-rows: 60px repeat(5, 1fr) 60px;
-  background-color: $mainColor;
-  gap: 1px;
-  & > * {
-    font-size: 20px;
-    cursor: pointer;
-  }
-  & > *:not(.img) {
-    transition: all 0.5s;
-    background-color: white;
-    &:hover {
-      background-color: $mainColor;
-      color: white;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 45vh;
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90% 10%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-  }
-  img {
-    grid-column: 2 / -2;
-    grid-row: 2 / -2;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: 1;
-  }
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: -2 / -1;
-
-    text-transform: uppercase;
-  }
-  h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .wrapper {
-    grid-column: 2/3;
-    grid-row: -2;
-    white-space: nowrap;
-    overflow: hidden;
+    span {
+      margin-left: 10px;
+      text-transform: uppercase;
+      align-self: center;
+      font-size: 14px;
+    }
   }
 }
