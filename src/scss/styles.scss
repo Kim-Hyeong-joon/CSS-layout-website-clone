@@ -13,12 +13,15 @@ main {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   grid-template-rows: 60px repeat(5, 1fr) 60px;
+  background-color: $mainColor;
+  gap: 1px;
   & > * {
     font-size: 20px;
     cursor: pointer;
   }
   & > *:not(.img) {
     transition: all 0.5s;
+    background-color: white;
     &:hover {
       background-color: $mainColor;
       color: white;
@@ -36,31 +39,24 @@ main {
     justify-content: center;
     align-items: center;
     grid-column: 1;
-    border: 1px solid $mainColor;
   }
   h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: -2 / -1;
-    border: 1px solid $mainColor;
+
     text-transform: uppercase;
   }
   h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 1px solid $mainColor;
-    border-right: 1px solid $mainColor;
-    border-bottom: 1px solid $mainColor;
   }
   .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     grid-column: 2/3;
     grid-row: -2;
-    border: 1px solid $mainColor;
+    white-space: nowrap;
     overflow: hidden;
   }
 }
