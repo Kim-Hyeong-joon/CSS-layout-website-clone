@@ -6,3 +6,217 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
 }
+
+header {
+  .logo {
+    .circle {
+      position: fixed;
+      top: 55px;
+      left: 55px;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+  nav {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: 100vh;
+    align-items: center;
+    div {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 20px;
+        letter-spacing: 2px;
+        transform: rotateZ(90deg);
+      }
+      &:first-child {
+        background-color: #5da2ec;
+      }
+      &:nth-child(2) {
+        background-color: #f64444;
+      }
+      &:last-child {
+        background-color: #ffb400;
+      }
+    }
+  }
+}
+
+main {
+  margin-right: 180px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 60px;
+}
+.explanation {
+  @extend %text;
+  margin-top: 255px;
+  margin-bottom: 90px;
+  margin-right: 200px;
+}
+.img {
+  width: 100%;
+  height: 100vh;
+  img {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: calc(100vw - 180px);
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.advertising {
+  @extend %text;
+  margin-top: 145px;
+  margin-bottom: 100px;
+}
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 630px;
+  gap: 60px;
+  margin-bottom: 180px;
+  .grid-content {
+    width: 100%;
+    height: 100%;
+    .grid-content__img {
+      height: 490px;
+      margin-bottom: 35px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .grid-content__description {
+      font-size: 15px;
+      line-height: 150%;
+      letter-spacing: 2px;
+    }
+  }
+}
+.event {
+  @extend %threeGrid;
+  margin-bottom: 80px;
+  .wrapper {
+    @extend %text;
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.separate {
+  display: grid;
+  grid-template-columns: repeat(70, 1fr);
+  grid-template-rows: 15px;
+  div {
+    &:nth-child(odd) {
+      border-top: solid 1px black;
+      border-bottom: solid 1px black;
+    }
+  }
+}
+
+.date-grid {
+  @extend %threeGrid;
+  grid-template-rows: 220px;
+  column-gap: 120px;
+  .grid-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    span {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -37px;
+
+  .btn {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 55px;
+    border: solid 1px black;
+    letter-spacing: 2px;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.newsletter {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: center;
+  align-items: center;
+  column-gap: 150px;
+  padding: 35px 60px;
+  border: dashed 1px black;
+  span {
+    justify-self: start;
+    display: inline-block;
+    font-size: 25px;
+    letter-spacing: 3px;
+    width: 270px;
+  }
+  form {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    border: solid 1px black;
+    padding: 20px;
+    input {
+      &:first-child {
+        all: unset;
+        width: 100%;
+        color: black;
+        &::placeholder {
+          color: black;
+          letter-spacing: 1px;
+        }
+      }
+      &:last-child {
+        all: unset;
+      }
+    }
+  }
+}

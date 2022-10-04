@@ -1,0 +1,9 @@
+%text {
+  font-size: 80px;
+  font-weight: 200;
+}
+
+%threeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
