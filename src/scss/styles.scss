@@ -6,3 +6,127 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
 }
+
+header {
+  width: 100%;
+  nav {
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    h1 {
+      white-space: nowrap;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+    .menu-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        text-transform: uppercase;
+        font-size: 14px;
+        li {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}
+main {
+  margin-top: 35px;
+}
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: $height;
+  .grid-content {
+    position: relative;
+    .img {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    span {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      color: white;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.list-section {
+  margin-top: 90px;
+  height: $height;
+  padding: 0 40px;
+  .list-section__header {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 70px;
+    h1 {
+      font-weight: 300;
+      width: 100%;
+      padding: 0 20px;
+      cursor: pointer;
+      &:first-child {
+        text-align: end;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .list-section__imgs {
+    display: grid;
+    grid-template-columns: 0.1fr repeat(4, 1fr) 0.1fr;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    span {
+      cursor: pointer;
+      font-size: 30px;
+      font-weight: 100;
+      &:first-child {
+        justify-self: start;
+      }
+      &:last-child {
+        justify-self: end;
+      }
+    }
+  }
+  .list-section__footer {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      padding: 20px 30px;
+      text-decoration: none;
+      color: black;
+      background-color: #e8e8e8;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+  }
+}
